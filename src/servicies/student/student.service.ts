@@ -7,9 +7,9 @@ import { Repository } from 'typeorm';
 @Injectable()
 export class StudentService {
   @InjectRepository(StudentsRepository)
-  private studentRepository: Repository<Student>;
+  private studentRepository: StudentsRepository;
 
-  async getAll() {
+  async getAll(): Promise<Student[]> {
     const items = await this.studentRepository.find();
     if (items) {
       return items;

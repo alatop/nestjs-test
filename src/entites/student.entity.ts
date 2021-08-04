@@ -1,9 +1,9 @@
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
-@Entity()
+@Entity({ name: 'students', synchronize: false })
 class Student {
   @PrimaryGeneratedColumn()
-  public stident_id: number;
+  public student_id: number;
 
   @Column()
   public student_name: string;
