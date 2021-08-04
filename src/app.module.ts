@@ -6,6 +6,7 @@ import { TestController } from './controllers/test/test.controller';
 import { DatabaseModule } from './modules/database/database.module';
 import * as Joi from 'joi';
 import { StudentsModule } from './modules/student/student.module';
+import { PostgreModule } from './modules/postgre/postgre.module';
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -20,6 +21,7 @@ import { StudentsModule } from './modules/student/student.module';
     }),
     DatabaseModule,
     StudentsModule,
+    PostgreModule,
   ],
   controllers: [AppController, TestController],
   providers: [AppService],
