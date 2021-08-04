@@ -1,0 +1,19 @@
+import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
+import Student from 'src/entites/student.entity';
+import { StudentsRepository } from 'src/entites/student.repoitory';
+import { Repository } from 'typeorm';
+
+@Injectable()
+export class StudentService {
+  @InjectRepository(StudentsRepository)
+  private studentRepository: Repository<Student>;
+
+  async getAll() {
+    const items = await this.studentRepository.find();
+    if (items) {
+      return items;
+    }
+    throw new HttpException('Post not found', HttpStatus.NOT_FOUND);
+  }
+}
