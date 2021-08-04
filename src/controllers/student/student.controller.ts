@@ -17,6 +17,13 @@ export class StudentController {
 
   @Get('pg')
   async getAllPg(): Promise<Student[]> {
-    return this.postgreService.executeQuery('SELECT * from students');
+    return this.postgreService.executeQuery('SELECT * from students LIMIT 1');
+  }
+
+  @Get('demo')
+  async getAllDemo(): Promise<any[]> {
+    return this.postgreService.executeQuery(
+      'SELECT * from `MODEL_LOOKBACK` LIMIT 5;',
+    );
   }
 }

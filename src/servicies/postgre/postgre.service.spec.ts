@@ -1,7 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { PostgreService } from './postgre.service';
 
-describe('PosgreService', () => {
+describe('PostgreService', () => {
   let service: PostgreService;
 
   beforeEach(async () => {
