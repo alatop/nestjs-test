@@ -16,7 +16,7 @@ import Student from 'src/entites/student.entity';
         password: configService.get('POSTGRES_PASSWORD'),
         database: configService.get('POSTGRES_DB'),
         entities: [Student],
-        synchronize: true,
+        synchronize: false,
       }),
     }),
   ],

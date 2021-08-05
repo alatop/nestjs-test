@@ -23,7 +23,7 @@ export class StudentController {
   @Get('demo')
   async getAllDemo(): Promise<any[]> {
     return this.postgreService.executeQuery(
-      'SELECT * from `MODEL_LOOKBACK` LIMIT 5;',
+      'SELECT * from "your table" LIMIT 5;',
     );
   }
 }
