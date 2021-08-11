@@ -1,12 +1,17 @@
 {
   "compilerOptions": {
     "module": "commonjs",
+    "lib": ["ES2020", "esnext"], 
     "declaration": true,
     "removeComments": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
-    "target": "es2017",
+    "noFallthroughCasesInSwitch": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noImplicitReturns": true,
+    "target": "ES2020",
     "sourceMap": true,
     "outDir": "./dist",
     "baseUrl": "./",
@@ -14,3 +19,4 @@
     "skipLibCheck": true
   }
 }
+
