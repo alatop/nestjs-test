@@ -12,6 +12,19 @@
         "restart": true,
         "stopOnEntry": false,
         "protocol": "inspector"
-      }
+      },
+      {
+        "name": "Attach To npm",
+        "type": "node",
+        "request": "attach",
+        "port": 9229,
+        "address": "localhost",
+        "restart": false,
+        "sourceMaps": false,
+        "outDir": null,
+        "localRoot": "${workspaceRoot}",
+        "remoteRoot": null
+    }
+    
     ]
 }
