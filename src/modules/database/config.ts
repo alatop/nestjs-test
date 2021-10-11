@@ -1,9 +1,9 @@
-import { Module } from '@nestjs/common';
-import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
-import { ConfigModule, ConfigService } from '@nestjs/config';
-import Student from 'src/entites/student.entity';
-import { config } from 'rxjs';
-import { Logger } from '@nestjs/common';
+import { TypeOrmModuleOptions } from '@nestjs/typeorm';
+import { ConfigService } from '@nestjs/config';
+import Student from '../../entities/student.entity';
+import { config as dotenvConfig } from 'dotenv';
+
+const dotenvValues = dotenvConfig().parsed;
 
 function getFromConfigServiceOrEnvDirectly(
   optionName: string,
@@ -11,7 +11,7 @@ function getFromConfigServiceOrEnvDirectly(
 ) {
   return configService
     ? configService.get(optionName)
-    : process.env[optionName];
+    : dotenvValues[optionName];
 }
 
 export function getTypeORMConfig(
@@ -30,13 +30,13 @@ export function getTypeORMConfig(
     entities: [Student],
     synchronize: false,
     migrationsTableName: 'custom_migration_table',
-    migrations: ['../../migration/*.js'],
+    migrations: ['migrations/*.ts'],
     cli: {
-      migrationsDir: 'migration',
+      migrationsDir: 'migrations',
     },
   };
 
-  Logger.log('config', config);
+  console.log('my config', config);
 
   return config;
 }

@@ -1,7 +1,7 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import Student from 'src/entites/student.entity';
-import { StudentsRepository } from 'src/entites/student.repoitory';
+import Student from 'src/entities/student.entity';
+import { StudentsRepository } from 'src/entities/student.repoitory';
 
 @Injectable()
 export class StudentService {
