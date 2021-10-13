@@ -15,6 +15,11 @@ export class StudentController {
     return this.studentsService.getAll();
   }
 
+  @Get()
+  async getAllBySQL(): Promise<Student[]> {
+    return this.studentsService.getAll();
+  }
+
   @Get('pg')
   async getAllPg(): Promise<Student[]> {
     return this.postgreService.executeQuery('SELECT * from students LIMIT 1');

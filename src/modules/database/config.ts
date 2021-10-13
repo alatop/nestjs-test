@@ -34,6 +34,9 @@ export function getTypeORMConfig(
     cli: {
       migrationsDir: 'migrations',
     },
+    // logging: ['error', 'query', 'warn'],
+    logging: 'all',
+    // logging: ['all'],
   };
 
   console.log('my config', config);
