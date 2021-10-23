@@ -1,0 +1,5 @@
+entity: Student
+items:
+  student{1..2}:
+    student_name: '{{name.firstName}}'
+    student_age: '{{datatype.number}}'
