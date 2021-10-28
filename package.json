@@ -26,7 +26,7 @@
     "migration:run": "npm run typeorm migration:run",
     "migration:run:debug": "npm run typeorm:debug migration:run",
     "migration:revert": "npm run typeorm  migration:revert",
-    "migration:refresh": "npm run typeorm migration:revert && npm run typeorm:debug migration:run",
+    "migration:refresh": "npm run typeorm migration:revert && npm run migration:run",
     "migration:generate": "npm run typeorm migration:generate -- -n",
     "migration:generate:debug": "npm run typeorm:debug migration:generate -- -n",
     "schema:log": "npm run typeorm  schema:log",
